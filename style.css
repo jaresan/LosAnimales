@@ -3,9 +3,6 @@ body {
 }
 
 .animal-container > div {
-    background-color: #f1f1f1;
-    text-align: center;
-    border: solid 1px black;
 }
 
 .content-container {
@@ -15,7 +12,62 @@ body {
 .animal-carousel {
     width: 640px;
     margin: auto;
+    height: 300px;
+    overflow: hidden;
 }
+.row > div {
+    padding: 0;
+}
+
+.height {
+    height: 100px !important;
+}
+
+.logo {
+    background: url("img/zoo/logo.jpg");
+}
+
+.animal-picture {
+    border-radius: 100%;
+    width: 64px;
+    height: 64px;
+    background-size: contain !important;
+    background-repeat: round !important;
+    margin: auto;
+}
+
+.panda {
+    background: url("img/animals/panda.png");
+}
+
+.lion {
+    background: url("img/animals/lion.png");
+}
+
+.tiger {
+    background: url("img/animals/tiger.png");
+}
+
+.gorilla {
+    background: url("img/animals/gorilla.png");
+}
+
+.parrot {
+    background: url("img/animals/parrot.png");
+}
+
+.giraffe {
+    background: url("img/animals/giraffe.png");
+}
+
+.tarantula {
+    background: url("img/animals/tarantula.png");
+}
+
+.pavo {
+    background: url("img/animals/pavo.png");
+}
+
 
 
 #footer {

@@ -12,7 +12,7 @@
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
 <div class="container-fluid header-image">
-    <img src="img/animals/panda2.jpg" alt="Panda">
+    <img src="img/animals/detail/${animal}.png" alt="${animal}">
 </div>
 
 <nav class="navbar navbar-default" data-spy="affix" data-offset-top="297" style="margin-bottom: 0;">
@@ -23,7 +23,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Panda</a>
+            <a class="navbar-brand" href="./">Home</a>
         </div>
         <div>
             <div class="collapse navbar-collapse" id="myNavbar">
@@ -37,7 +37,7 @@
     </div>
 </nav>
 <div class="row">
-    <div id="section1" class="container-fluid">
+    <div id="section1" class="container-fluid section">
         <h1>Facts</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum pellentesque ornare. Donec neque
             augue, aliquet sit amet eros et, suscipit posuere diam. Donec efficitur efficitur tortor eu pharetra.
@@ -80,7 +80,7 @@
     </div>
 </div>
 <div class="row">
-    <div id="section2" class="container-fluid">
+    <div id="section2" class="container-fluid section">
         <h1>Places</h1>
 
         <div class="img-container">
@@ -94,9 +94,9 @@
     </div>
 </div>
 <div class="row">
-    <div id="section3" class="container-fluid">
+    <div id="section3" class="container-fluid section">
         <h1>Support</h1>
-        <h2>Become a panda ambassador!</h2>
+        <h2>Become an ambassador for ${animal}s!</h2>
 
         <div class="form-container">
             <form>
@@ -209,5 +209,6 @@
         </div>
     </div>
 </div>
+<script src="js/animalDescription.js"></script>
 </body>
 </html>

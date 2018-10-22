@@ -130,14 +130,38 @@ p{
     width: 100%;
 }
 
-#section1 {padding-top:50px;padding-bottom:50px;color: #000000; background-color: #EFF2FB;}
-#section2 {padding-top:50px;padding-bottom:50px;color: #000000; background-color: #FBFBEF;}
-#section3 {padding-top:50px;padding-bottom:50px;color: #000000; background-color: #EFF2FB;}
+.section {
+    margin: 0 auto !important;
+    border-top: solid 1px lightgrey;
+    border-bottom: solid 1px lightgrey;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #000000;
+}
+
+#section1 {
+    background-color: #EFF2FB;
+}
+
+#section2 {
+    background-color: #FBFBEF;
+}
+
+#section3 {
+    background-color: #EFF2FB;
+}
 
 
 
 
-.animal-container > div {
+.animal-container {
+    margin: 16px 0;
+    background: #DDD;
+    border: solid 1px #AAA;
+}
+
+.row div {
+    margin: 16px auto;
 }
 
 .content-container {
@@ -168,41 +192,14 @@ p{
     border-radius: 100%;
     width: 64px;
     height: 64px;
-    background-size: contain !important;
-    background-repeat: round !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
     margin: auto;
 }
 
-.panda {
-    background: url("img/animals/panda.png");
-}
-
-.lion {
-    background: url("img/animals/lion.png");
-}
-
-.tiger {
-    background: url("img/animals/tiger.png");
-}
-
-.gorilla {
-    background: url("img/animals/gorilla.png");
-}
-
-.parrot {
-    background: url("img/animals/parrot.png");
-}
-
-.giraffe {
-    background: url("img/animals/giraffe.png");
-}
-
-.tarantula {
-    background: url("img/animals/tarantula.png");
-}
-
-.pavo {
-    background: url("img/animals/pavo.png");
+.animal-picture:hover {
+    transform: scale(1.5);
+    transition: transform 0.5s;
 }
 
 #footer {

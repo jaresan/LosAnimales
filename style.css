@@ -3,8 +3,8 @@ body {
 }
 
 .form-container{
-    margin-left: 100px;
-    margin-right: 100px;
+    max-width: 420px;
+    margin: 0 auto;
     padding-bottom: 10px;
     padding-top: 10px;
 }
@@ -117,12 +117,16 @@ p{
     top: 50px;
 }
 
+.container-fluid.header-image {
+    padding: 0;
+}
+
 .navbar {
     margin-bottom: 0px;
 }
 
 .container-fluid img{
-    height: 100%;
+    height: auto;
     width: 100%;
 }
 

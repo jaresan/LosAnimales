@@ -73,10 +73,11 @@ export class AnimalDetail extends Component {
     return (
       <div>
         <div className="row">
-          <section id="section1" className="container-fluid section">
-            <div className="image-container">
-              <img alt="Animal picture" src={imgPath}/>
+            <div className="container-fluid">
+                <img alt="Animal picture" src={imgPath}/>
             </div>
+          <section id="section1" className="container-fluid section">
+
             <h1>Facts</h1>
             <br/>
             {
@@ -92,7 +93,7 @@ export class AnimalDetail extends Component {
             <h1>Places</h1>
 
             <div className="img-container">
-              <img src="/img/maps/india.JPG" alt="India" style={{width: '100%'}}/>
+              <img src="/img/maps/india.JPG" alt="India"/>
               <div className="content">
                 <h1>Heading</h1>
                 <p>Lorem ipsum dolor sit amet, an his etiam torquatos.</p>

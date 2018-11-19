@@ -47,9 +47,10 @@ p{
     width: 100%;
     padding: 10px;
     alignment: center;
-    border-color: #000000;
-    border-style: dotted;
+    border-color: rgba(0, 0, 0, 0.37);
+    border-style: groove;
     border-width: 2px;
+    height: 100%;
 }
 
 .info-table p {
@@ -61,21 +62,24 @@ p{
 .info-table li{
     margin-left: 20px;
     margin-right: 20px;
-    font-size: 13px;
+    font-size: 16px;
     list-style-type: circle;
 }
 
 .info-table h1 {
     text-align: center;
     font-size: 17px;
+    font-weight: bold;
     margin-left: 20px;
     margin-right: 20px;
+    margin-top:20px;
 }
 
 .img-container {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
+    vertical-align: center;
 }
 
 .img-container h1{
@@ -84,6 +88,7 @@ p{
     text-align: center;
     margin-left: 10px;
     margin-right: 10px;
+    margin-top: 10px;
 }
 
 .img-container p {
@@ -103,7 +108,9 @@ p{
     background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
     color: #f1f1f1;
     width: 100%;
-    padding: 0px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .affix {
@@ -131,8 +138,12 @@ p{
     text-align: center;
 }
 
+.container-fluid img{
+    width: 100%;
+}
+
 .image-container img {
-    max-height: 100%;
+    width: 100%;
 }
 
 .section {

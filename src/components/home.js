@@ -31,15 +31,17 @@ export class Home extends Component {
           <Carousel/>
           <div className="animal-container">
             <div id="animal-selection" className="row">
-              {animals.map(animal =>
-                <Link key={animal} to={'animal/' + animal}>
+              {
+                animals.map(animal =>
                   <div className="col-lg-2 col-md-2 col-sm-3 col-6">
-                    <div className="animal-picture"
-                         style={{ background: `url("img/animals/${animal}.png")` }}>
-                    </div>
+                    <Link key={animal} to={'animal/' + animal}>
+                      <div className="animal-picture"
+                           style={{ background: `url("img/animals/${animal}.png")` }}>
+                      </div>
+                    </Link>
                   </div>
-                </Link>
-              )}
+                )
+              }
             </div>
           </div>
         </div>

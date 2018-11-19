@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+import moment from 'moment';
 import PropTypes from 'prop-types';
 
 const getDaysInMonth = date => new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
@@ -29,21 +30,6 @@ export default class DatePicker extends Component {
   }
 
   getMonthSelect() {
-    const months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December'
-    ];
-
     return (
       <div className={this.props.selectClassName}>
         <label htmlFor="month">Month</label>
@@ -54,7 +40,7 @@ export default class DatePicker extends Component {
           value={this.state.date.month}
         >
           <option value='invalid' disabled>Choose...</option>
-          { months.map((month, monthIndex) => <option key={monthIndex} value={monthIndex}>{month}</option>) }
+          { moment.months().map((month, monthIndex) => <option key={monthIndex} value={monthIndex}>{month}</option>) }
         </select>
       </div>
     );

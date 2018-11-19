@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import DatePicker from '../DatePicker';
+import DatePicker from '../date-picker';
 import moment from 'moment';
 import _ from 'lodash';
 

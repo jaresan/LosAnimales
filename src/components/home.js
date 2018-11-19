@@ -26,9 +26,8 @@ export class Home extends Component {
     return (
       <div>
         <NavBar/>
-
+        <Carousel/>
         <div className="container">
-          <Carousel/>
           <div className="animal-container">
             <div id="animal-selection" className="row">
               {

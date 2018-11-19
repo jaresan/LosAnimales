@@ -15,13 +15,13 @@ export class Carousel extends Component {
               <img className="d-block w-100" src="img/zoo/zoo2.jpg" alt="Second slide"/>
             </div>
             <div className="carousel-item">
-              <img className="d-block w-100" src="img/zoo/zoo3.jpg" alt="Second slide"/>
+              <img className="d-block w-100" src="img/zoo/zoo3.jpg" alt="Third slide"/>
             </div>
             <div className="carousel-item">
-              <img className="d-block w-100" src="img/zoo/zoo4.jpg" alt="Second slide"/>
+              <img className="d-block w-100" src="img/zoo/zoo4.jpg" alt="Fourth slide"/>
             </div>
             <div className="carousel-item">
-              <img className="d-block w-100" src="img/zoo/zoo5.jpg" alt="Second slide"/>
+              <img className="d-block w-100" src="img/zoo/zoo5.jpg" alt="Fifth slide"/>
             </div>
           </div>
           <a className="carousel-control-prev" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">

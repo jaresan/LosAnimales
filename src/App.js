@@ -25,7 +25,6 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <AnimalNavBar/>
           <div className="App-content">
             <Route exact path="/" component={Home} />
             <Route

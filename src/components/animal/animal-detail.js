@@ -56,11 +56,11 @@ export class AnimalDetail extends Component {
   renderAnimalInfo = () => {
     const keys = ['classification', 'diet', 'appearance', 'behaviour'];
     return keys.map(key => (
-      <div className="col-md-3 col-sm-3 col-xs-6" style={{color: '#6c757d'}}>
+      <div  key={key} className="col-md-3 col-sm-3 col-xs-6" style={{color: '#6c757d'}}>
         <div className="info-table">
           <h1>{_.capitalize(key)}</h1>
           {
-            this.props.data[key].map(c => <li>{c}</li>)
+            this.props.data[key].map(c => <li key={c}>{c}</li>)
           }
         </div>
       </div>
@@ -81,7 +81,7 @@ export class AnimalDetail extends Component {
             <h1>Facts</h1>
             <br/>
             {
-              data.description.split("\n").map(paragraph => <p style={{textAlign: 'justify'}}>{paragraph}</p>)
+              data.description.split("\n").map((paragraph, index) => <p key={index} style={{textAlign: 'justify'}}>{paragraph}</p>)
             }
             <div className="row" style={{marginRight: 100, marginLeft: 100}}>
               {this.renderAnimalInfo()}

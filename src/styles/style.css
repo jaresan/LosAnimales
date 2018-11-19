@@ -125,10 +125,14 @@ p{
     margin-bottom: 0px;
 }
 
-.container-fluid img {
+.container-fluid .image-container {
     width: 100%;
     height: 340px;
-    object-fit: cover;
+    text-align: center;
+}
+
+.image-container img {
+    max-height: 100%;
 }
 
 .section {

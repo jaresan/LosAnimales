@@ -73,7 +73,7 @@ export class AnimalDetail extends Component {
     return (
       <div>
         <div className="row">
-            <div className="container-fluid">
+            <div className="container-fluid animal-detail-container">
                 <img alt="Animal picture" src={imgPath}/>
             </div>
           <section id="section1" className="container-fluid section">

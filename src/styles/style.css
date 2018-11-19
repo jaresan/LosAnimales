@@ -233,3 +233,7 @@ body {
     background-color: #f1f1f1;
     text-align: center;
 }
+.animal-detail-container {
+    margin-bottom: 0px !important;
+    margin-top: 40px !important;
+}

@@ -9,6 +9,8 @@ import {AnimalNavBar} from "./animal-nav-bar";
 
 const isBirthdayValid = birthday => moment([birthday.year, birthday.month, birthday.day]).isValid();
 
+const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 export class AnimalDetail extends Component {
   state = {
     formData: {
@@ -17,6 +19,11 @@ export class AnimalDetail extends Component {
       last: '',
       email: ''
     },
+    error: {
+      email: null,
+      first: null,
+      last: null
+    }
   };
 
   handleSubmit = e => {
@@ -40,7 +47,7 @@ export class AnimalDetail extends Component {
   };
 
   setFormData(field, value) {
-    const {formData} = this.state;
+    const { formData } = this.state;
     formData[field] = value;
 
     this.setState({
@@ -53,6 +60,20 @@ export class AnimalDetail extends Component {
       ...date
     })
   };
+
+  validateEmail() {
+    if (!emailRegex.test(this.state.formData.email)) {
+      return this.setState({ error: { email: 'Email must be in a valid format' } })
+    }
+    return this.setState({ error: { email: null } })
+  }
+
+  validateLength(field) {
+    if (this.state.formData[field].length > 20) {
+      return this.setState({ error: { [field]: 'Cannot be longer than 20 characters' } })
+    }
+    return this.setState({ error: { [field]: null } })
+  }
 
   renderAnimalInfo = () => {
     const keys = ['classification', 'diet', 'appearance', 'behaviour'];
@@ -119,8 +140,12 @@ export class AnimalDetail extends Component {
                     id="exampleInputFirstName"
                     aria-describedby="firstNameHelp"
                     placeholder="Enter first name"
-                    onChange={e => this.setFormData('first', e.target.value)}
+                    onChange={e => {
+                      this.setFormData('first', e.target.value);
+                      this.validateLength('first');
+                    }}
                   />
+                  <small className="form-text text-danger">{this.state.error.first}</small>
                 </div>
                 <div className="form-group">
                   <label htmlFor="exampleInputLastName">Last name</label>
@@ -130,8 +155,12 @@ export class AnimalDetail extends Component {
                     id="exampleInputLastName"
                     aria-describedby="lastNameHelp"
                     placeholder="Enter last name"
-                    onChange={e => this.setFormData('last', e.target.value)}
+                    onChange={e => {
+                      this.setFormData('last', e.target.value);
+                      this.validateLength('last');
+                    }}
                   />
+                  <small className="form-text text-danger">{this.state.error.last}</small>
                 </div>
                 <div className="form-group">
                   <label htmlFor="exampleInputEmail1">Email address</label>
@@ -139,11 +168,13 @@ export class AnimalDetail extends Component {
                     type="email"
                     className="form-control"
                     id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
                     placeholder="Enter email"
-                    onChange={e => this.setFormData('email', e.target.value)}
+                    onChange={e => {
+                      this.setFormData('email', e.target.value);
+                      this.validateEmail();
+                    }}
                   />
-                  <small id="emailHelp" className="form-text text-muted">Lorem ipsum dolor sit amet.</small>
+                  <small className="form-text text-danger">{this.state.error.email}</small>
                 </div>
                 <div className="form-group">
                   <label htmlFor="month">Date of birth</label>

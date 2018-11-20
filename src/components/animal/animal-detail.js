@@ -63,16 +63,17 @@ export class AnimalDetail extends Component {
 
   validateEmail() {
     if (!emailRegex.test(this.state.formData.email)) {
-      return this.setState({ error: { email: 'Email must be in a valid format' } })
+      return this.setState({ error: { ...this.state.error, email: 'Email must be in a valid format' } })
     }
-    return this.setState({ error: { email: null } })
+    return this.setState({ error: { ...this.state.error, email: null } })
   }
 
   validateLength(field) {
     if (this.state.formData[field].length > 20) {
-      return this.setState({ error: { [field]: 'Cannot be longer than 20 characters' } })
+      return this.setState({ error: { ...this.state.error, [field]: 'Cannot be longer than 20 characters' } })
     }
-    return this.setState({ error: { [field]: null } })
+
+    return this.setState({ error: { ...this.state.error, [field]: null } })
   }
 
   renderAnimalInfo = () => {
@@ -91,6 +92,8 @@ export class AnimalDetail extends Component {
 
   render() {
     const { data, imgPath } = this.props;
+    const { error, formData: { birthday } } = this.state;
+    const errorPresent = error.first || error.last || error.email || !isBirthdayValid(birthday);
 
     return (
       <div>
@@ -186,7 +189,7 @@ export class AnimalDetail extends Component {
                     />
                   </div>
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary" disabled={errorPresent}>Submit</button>
               </form>
             </div>
           </section>

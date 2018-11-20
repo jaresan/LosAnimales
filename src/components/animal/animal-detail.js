@@ -5,6 +5,7 @@ import _ from 'lodash';
 
 import '../../styles/bootstrap.css';
 import '../../styles/style.css';
+import {AnimalNavBar} from "./animal-nav-bar";
 
 const isBirthdayValid = birthday => moment([birthday.year, birthday.month, birthday.day]).isValid();
 
@@ -72,6 +73,7 @@ export class AnimalDetail extends Component {
 
     return (
       <div>
+        <AnimalNavBar/>
         <div className="row">
             <div className="container-fluid animal-detail-container">
                 <img alt="Animal picture" src={imgPath}/>

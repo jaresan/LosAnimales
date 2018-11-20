@@ -14,6 +14,7 @@ const getAnimalDetail = props => {
   return (
     <AnimalDetail
       {...props}
+      animalId ={animalId}
       data={animalInfo[animalId] || animalInfo['panda']}
       imgPath={`/img/animals/detail/${animalId}.png`}
     />

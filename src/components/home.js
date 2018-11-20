@@ -11,7 +11,7 @@ const animals = [
   'tiger',
   'lion',
   'parrot',
-  'pavo',
+  'zebra',
   'tarantula',
   'giraffe',
   'gorilla',

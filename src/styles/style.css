@@ -235,3 +235,9 @@ body {
     margin-bottom: 0px !important;
     margin-top: 40px !important;
 }
+
+.main-title {
+    font-size: 52px;
+    font-weight: bold;
+    padding-bottom: 35px;
+}

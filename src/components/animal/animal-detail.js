@@ -100,6 +100,7 @@ export class AnimalDetail extends Component {
                 <img alt="Animal picture" src={imgPath}/>
             </div>
           <section id="section1" className="container-fluid section">
+            <h1 className="main-title">{this.props.animalId.toUpperCase()}</h1>
 
             <h1>Facts</h1>
             <br/>

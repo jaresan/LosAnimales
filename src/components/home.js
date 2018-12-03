@@ -31,8 +31,8 @@ export class Home extends Component {
           <div className="animal-container">
             <div id="animal-selection" className="row">
               {
-                animals.map(animal =>
-                  <div className="col-lg-2 col-md-2 col-sm-3 col-6">
+                animals.map((animal, i) =>
+                  <div key={i} className="col-lg-2 col-md-2 col-sm-3 col-6">
                     <Link key={animal} to={'animal/' + animal}>
                       <div className="animal-picture"
                            style={{ background: `url("img/animals/${animal}.png")` }}>

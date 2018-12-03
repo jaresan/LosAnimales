@@ -122,8 +122,8 @@ export class AnimalDetail extends Component {
             <div className="img-container">
               <img src="/img/maps/india.JPG" alt="India"/>
               <div className="content">
-                <h1>Heading</h1>
-                <p>Lorem ipsum dolor sit amet, an his etiam torquatos.</p>
+                <h1>Panda location</h1>
+                <p>This is where pandas live.</p>
               </div>
             </div>
 

@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-
-import {Link} from 'react-router-dom'
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 import '../styles/bootstrap.css';
 
 const Home = props => {
   return (
     <div>
-        <div className="container">
-            <div>
-                <img src="/img/logotipo.png" alt="Logo"/>
-            </div>
-            <h3>Welcome to Animal Adoptions</h3>
+      <div className="container">
+        <div>
+          <img src="/img/logotipo.png" alt="Logo"/>
+        </div>
+        <h3>Welcome to Animal Adoptions</h3>
         <div className="animal-container">
           <div id="animal-selection" className="row">
             {

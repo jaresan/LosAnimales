@@ -231,6 +231,10 @@ p{
 
 .animal-picture {
     border-radius: 20%;
+    border-style: solid;
+    border-color: rgb(213, 213, 213);
+    border-width: 2px;
+
     width: 100px;
     height: 100px;
     background-size: cover !important;

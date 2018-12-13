@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
 
-import { NavBar } from './nav-bar'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 import '../styles/bootstrap.css';
-import { Carousel } from "./carousel";
 
 const Home = props => {
   return (
     <div>
-      <NavBar/>
-      <Carousel/>
-      <div className="container">
+        <div className="container">
+            <div>
+                <img src="/img/logotipo.png" alt="Logo"/>
+            </div>
+            <h3>Welcome to Animal Adoptions</h3>
         <div className="animal-container">
           <div id="animal-selection" className="row">
             {

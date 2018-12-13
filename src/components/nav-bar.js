@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export class NavBar extends Component {
   render() {
     return (
-      <div className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="logo navbar-brand"></div>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

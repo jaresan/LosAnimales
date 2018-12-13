@@ -38,7 +38,6 @@ class App extends Component {
               render={getAnimalDetail}
             />
           </div>
-          <Footer/>
         </div>
       </BrowserRouter>
     );

@@ -27,9 +27,29 @@ function* loadData() {
   });
 }
 
+function* loadAnimals(action) {
+  const species = action.payload.species;
+  //TODO: TONY
+  // const data = yield call(axios.get, 'apiUrl');
+  const data = {
+    data: [
+      'first one',
+      'the second one',
+      'another animal',
+      'the very last animal',
+      'haha, another animal'
+    ]
+  };
+  yield put({
+    type: Action.r_loadAnimals,
+    payload: {data: data.data, species}
+  });
+}
+
 export default function*() {
   yield all([
-    takeEvery(Action.loadData, loadData)
+    takeEvery(Action.loadData, loadData),
+    takeEvery(Action.loadAnimals, loadAnimals)
   ])
 }
  

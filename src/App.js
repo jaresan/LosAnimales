@@ -4,8 +4,7 @@ import './styles/bootstrap.css';
 import './styles/style.css';
 import { BrowserRouter, Route } from 'react-router-dom'
 import Home from './components/home'
-import { AnimalDetail } from './components/animal/animal-detail'
-import { Footer } from "./components/footer";
+import AnimalDetail from './components/animal/animal-detail'
 import animalInfo from './components/animal/facts';
 import Registration from "./components/user/registration";
 import Admin from "./components/admin/admin";

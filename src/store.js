@@ -2,7 +2,7 @@ import { applyMiddleware, createStore, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './reducers/rootReducer'
 import rootSaga from './sagas/rootSaga';
-import speciesSaga from './sagas/dataSaga';
+import speciesSaga from './sagas/apiSaga';
 
 
 export default () => {

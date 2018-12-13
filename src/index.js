@@ -5,8 +5,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import getStore from './store';
-
+import Action from './constants/actions'
 const store = getStore();
+
+store.dispatch({type: Action.loadData, payload: null });
 
 ReactDOM.render(
   <Provider store={store}>

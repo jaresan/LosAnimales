@@ -6,8 +6,23 @@ body {
     background-size: cover;
 }
 
+.account img{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 40px;
+}
+
+hr {
+    display: block;
+    margin-right: 400px;
+    margin-left: 400px;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+
 .container img{
-   margin: 30px auto;
+   margin: 0px auto;
     display: grid;
 }
 
@@ -188,6 +203,8 @@ p{
 
 .animal-container {
     margin: 16px 0;
+    margin-left: 120px;
+    margin-right: 120px;
 }
 
 #animal-selection div {

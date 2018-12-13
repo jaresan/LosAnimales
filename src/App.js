@@ -7,6 +7,7 @@ import { Home } from './components/home'
 import { AnimalDetail } from './components/animal/animal-detail'
 import { Footer } from "./components/footer";
 import animalInfo from './components/animal/facts';
+import Registration from "./components/user/registration";
 
 const getAnimalDetail = props => {
   const animalId = props.match.params.animal_id;
@@ -27,6 +28,7 @@ class App extends Component {
         <div>
           <div className="App-content">
             <Route exact path="/" component={Home} />
+            <Route exact path="/registration" component={Registration} />
             <Route
               path="/animal/:animal_id"
               render={getAnimalDetail}

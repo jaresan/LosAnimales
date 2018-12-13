@@ -7,11 +7,15 @@ import '../styles/bootstrap.css';
 const Home = props => {
   return (
     <div>
+        <div className="account">
+            <img src="/img/account.png" alt="Account"/>
+        </div>
       <div className="container">
         <div>
           <img src="/img/logotipo.png" alt="Logo"/>
         </div>
         <h3>Welcome to Animal Adoptions</h3>
+          <hr></hr>
         <div className="animal-container">
           <div id="animal-selection" className="row">
             {

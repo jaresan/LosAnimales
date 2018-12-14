@@ -16,7 +16,7 @@ class AnimalDetail extends Component {
     return keys.map(key => (
       <div key={key} className="col-md-3 col-sm-3 col-xs-6" style={{ color: '#6c757d' }}>
         <div className="info-table">
-          <h1>{_.capitalize(key)}</h1>
+          <h4>{_.capitalize(key)}</h4>
           {
             this.props.data[key].map(c => <li key={c}>{c}</li>)
           }
@@ -29,14 +29,15 @@ class AnimalDetail extends Component {
     const { data, imgPath } = this.props;
     return (
       <div>
-        <AnimalNavBar/>
+        <AnimalNavBar data-offset="50"/>
         <div className="row">
           <div className="container-fluid animal-detail-container">
             <img alt="Animal picture" src={imgPath}/>
           </div>
+          <section id="section0" className="container-fluid section">
+              <h1 className="main-title">{this.props.animalId.toUpperCase()}</h1>
+          </section>
           <section id="section1" className="container-fluid section">
-            <h1 className="main-title">{this.props.animalId.toUpperCase()}</h1>
-
             <h1>Facts</h1>
             <br/>
             {
@@ -55,7 +56,7 @@ class AnimalDetail extends Component {
             <div className="img-container">
               <img src="/img/maps/india.JPG" alt="India"/>
               <div className="content">
-                <h1>Panda location</h1>
+                <h3>Panda location</h3>
                 <p>This is where pandas live.</p>
               </div>
             </div>
@@ -63,20 +64,25 @@ class AnimalDetail extends Component {
           </section>
         </div>
         <div>
-          <table className="table table-bordered table-dark">
-            <thead>
-            </thead>
-            <tbody>
-            {
-              (this.props.animals.get(this.props.animalId) || []).map((name, i) =>
-                <tr key={i} className="col-lg-2 col-md-2 col-sm-3 col-6">
-                  <td>{name}</td>
-                  <td><button>Adopt!</button></td>
-                </tr>
-              )
-            }
-            </tbody>
-          </table>
+            <section id="section3" className="container-fluid section">
+                <h1>Adopt!</h1>
+          <button>
+              <img src="/img/pandas/chachi.jpg"></img>
+              <h5>Chachi</h5>
+          </button>
+            <button>
+                <img src="/img/pandas/kuku.jpg"></img>
+                <h5>Kuku</h5>
+            </button>
+            <button>
+                <img src="/img/pandas/lola.jpg"></img>
+                <h5>Lola</h5>
+            </button>
+            <button>
+                <img src="/img/pandas/pika.jpg"></img>
+                <h5>Pika</h5>
+            </button>
+            </section>
         </div>
       </div>
     );

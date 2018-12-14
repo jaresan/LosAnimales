@@ -16,11 +16,6 @@ const AddSpeciesForm = props => {
             />
           </div>
         </div>
-        <div>
-          <button type="submit">
-            Add species
-          </button>
-        </div>
       </form>
     );
   };

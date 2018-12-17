@@ -5,6 +5,7 @@ import _ from 'lodash';
 import '../../styles/bootstrap.css';
 import '../../styles/style.css';
 import { AnimalNavBar } from "./animal-nav-bar";
+import {Link} from "react-router-dom";
 
 class AnimalDetail extends Component {
   renderAnimalInfo = info => {
@@ -34,12 +35,13 @@ class AnimalDetail extends Component {
       <div>
         <AnimalNavBar data-offset="50"/>
         <div className="row">
-          <div className="container-fluid animal-detail-container">
-            <img alt="Animal" src={data.detailImg}/>
-          </div>
-          <section id="section0" className="container-fluid section">
-              <h1 className="main-title">{species.toUpperCase()}</h1>
-          </section>
+
+            <div className="container-fluid animal-detail-container">
+                <img alt="Animal" src={data.detailImg}/>
+                <div className="animal-detail-label">
+                    <label>{species.toUpperCase()}</label>
+                </div>
+            </div>
           <section id="section1" className="container-fluid section">
             <h1>Facts</h1>
             <br/>

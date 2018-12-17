@@ -4,5 +4,6 @@ export const API = {
   getAll: `${baseUrl}/list`,
   login: `${baseUrl}/user/login`,
   register: `${baseUrl}/user/signup`,
-  addSpecies: `${baseUrl}/species/create`
+  addSpecies: `${baseUrl}/species/create`,
+  addAnimal: `${baseUrl}/animals/create`
 };

@@ -93,12 +93,31 @@ function* addSpecies(action) {
       data: payload
     });
     data = res.data;
-    console.log(data);
   } catch (e) {
     throw new Error('Error while logging in')
   }
   yield put({
     type: Action.r_addSpecies,
+    payload: data
+  });
+}
+
+function* addAnimal(action) {
+  const { payload } = action;
+  let data;
+  try {
+    const res = yield call(axios, {
+      url: API.addAnimal,
+      method: 'POST',
+      cors: true,
+      data: payload
+    });
+    data = res.data;
+  } catch (e) {
+    throw new Error('Error while logging in')
+  }
+  yield put({
+    type: Action.r_addAnimal,
     payload: data
   });
 }
@@ -114,6 +133,7 @@ export default function*() {
     takeEvery(Action.login, login),
     takeEvery(Action.register, register),
     takeEvery(Action.addSpecies, addSpecies),
+    takeEvery(Action.addAnimal, addAnimal)
   ])
 }
  

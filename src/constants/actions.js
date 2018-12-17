@@ -11,6 +11,8 @@ export default keymirror({
   r_register: null,
   addSpecies: null,
   r_addSpecies: null,
+  addAnimal: null,
+  r_addAnimal: null,
   closeModal: null,
   redirect: null
 });

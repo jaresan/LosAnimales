@@ -1,5 +1,6 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form'
+import { Field, reduxForm } from 'redux-form';
+import CustomInput from '../custom-input';
 
 const RegistrationForm = props => {
     const { handleSubmit, pristine, reset, submitting } = props;
@@ -11,10 +12,9 @@ const RegistrationForm = props => {
                     <label>First Name</label>
                     <div>
                         <Field
-                            name="firstName"
-                            component="input"
-                            type="text"
-                            placeholder="First Name"
+                          name="firstName"
+                          placeholder="First Name"
+                          component={ CustomInput }
                         />
                     </div>
                 </div>

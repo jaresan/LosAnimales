@@ -357,3 +357,22 @@ button h5{
     cursor: pointer;
     width: 90px;
 }
+
+#accountButton {
+    border: none;
+    background: none;
+}
+
+#accountButton:focus {
+    outline: none;
+}
+
+#accountButton img {
+    width: 25px;
+    height: 25px;
+    border: none;
+}
+
+#accountButton img:focus {
+    outline: none;
+}

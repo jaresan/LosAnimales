@@ -1,16 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
+import User from './user/user';
 
 import '../styles/bootstrap.css';
 
 const Home = props => {
   return (
     <div>
-        <div className="account">
-            <img src="/img/account.png" alt="Account"/>
-        </div>
       <div className="container">
+        <User/>
         <div>
           <img src="/img/logotipo.png" alt="Logo"/>
         </div>

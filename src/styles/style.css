@@ -357,3 +357,37 @@ button h5{
     cursor: pointer;
     width: 90px;
 }
+
+.porque {
+    margin: auto;
+}
+
+#admin-page{
+    display: flex;
+}
+
+#admin-page button1{
+    background-color: transparent;
+    border: solid 1px white;
+    border-radius: 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    width: 250px;
+    height: 250px;
+    margin: 70px 20px;
+}
+
+button1 img{
+    height: 100px;
+    margin-bottom: 10px;
+    margin-top: 50px;
+}
+
+button1 h6{
+    font-size: 18px;
+    color: white;
+}

@@ -12,9 +12,14 @@ export const closeModal = () => {
 const User = props => {
   return (
     <div className="account">
-      <button id="accountButton" type="button" data-toggle="modal" data-target="#myModal">
+      {props.loggedIn ?
         <img src="/img/account.png" alt="Account"/>
-      </button>
+        :
+        <button id="accountButton" type="button" data-toggle="modal" data-target="#myModal">
+          <img src="/img/account.png" alt="Account"/>
+        </button>
+      }
+      {props.loggedIn ? <img alt='Messages' src="/img/message.png"/> : <span/>}
       {props.data.email}
       {props.loggedIn ? <button onClick={props.logout}>Sign out</button> : <span/>}
       <div className="modal" id="myModal">

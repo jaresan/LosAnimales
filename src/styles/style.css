@@ -401,10 +401,11 @@ button1 h6{
     outline: none;
 }
 
-#accountButton img {
+.account img {
     width: 25px;
     height: 25px;
     border: none;
+    display: inline;
 }
 
 #accountButton img:focus {
@@ -413,4 +414,8 @@ button1 h6{
 
 .error-message {
     color: red;
+}
+
+.modal-backdrop {
+    z-index: 1000;
 }

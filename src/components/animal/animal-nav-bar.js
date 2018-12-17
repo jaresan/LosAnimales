@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import User from '../user/user';
 
 export class AnimalNavBar extends Component {
   render() {
@@ -10,12 +11,7 @@ export class AnimalNavBar extends Component {
           <Link to="/" className="navbar-brand js-scroll-trigger" href="#page-top ">
               <img alt='logo' src="/img/home_logo.png"/>
           </Link>
-          <Link to="/" className="navbar-brand js-scroll-trigger" href="#page-top ">
-              <img alt='account' src="/img/account2.png" style={{width : '25px'}}/>
-          </Link>
-          <Link to="/" className="navbar-brand js-scroll-trigger" href="#page-top ">
-              <img alt='message' src="/img/message.png" style={{width : '25px'}}/>
-          </Link>
+          <User/>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"/>
           </button>

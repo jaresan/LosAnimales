@@ -9,7 +9,6 @@ import { AnimalNavBar } from "./animal-nav-bar";
 class AnimalDetail extends Component {
   renderAnimalInfo = info => {
     const keys = ['classification', 'diet', 'appearance', 'behaviour'];
-    console.log(info, keys);
     return keys.map(key => (
       <div key={key} className="col-md-3 col-sm-3 col-xs-6" style={{ color: '#6c757d' }}>
         <div className="info-table">

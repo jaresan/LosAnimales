@@ -6,9 +6,7 @@ class Registration extends Component {
   render() {
     return (
       <div>
-        <RegistrationForm
-          onSubmit={console.log}
-        />
+        <RegistrationForm/>
       </div>
     );
   }

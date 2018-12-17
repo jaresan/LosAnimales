@@ -2,5 +2,6 @@ const baseUrl = process.env.NODE_ENV === 'development' ? 'https://los-animales-s
 export const API = {
   baseUrl,
   getAll: `${baseUrl}/list`,
-  login: `${baseUrl}/login`,
+  login: `${baseUrl}/user/login`,
+  register: `${baseUrl}/user/signup`
 };

@@ -410,3 +410,7 @@ button1 h6{
 #accountButton img:focus {
     outline: none;
 }
+
+.error-message {
+    color: red;
+}

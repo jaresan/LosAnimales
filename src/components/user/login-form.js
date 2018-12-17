@@ -4,14 +4,9 @@ import { Field, reduxForm } from 'redux-form';
 import Action from '../../constants/actions';
 
 let LoginForm = props => {
-    const { handleSubmit, pristine, reset, submitting, onSubmit, closeModal } = props;
+    const { handleSubmit, pristine, reset, submitting, onSubmit, closeModal, loginError } = props;
     return (
-      <form onSubmit={async (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        closeModal();
-        await handleSubmit(onSubmit)();
-      }}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label>Email</label>
           <div>
@@ -34,6 +29,9 @@ let LoginForm = props => {
             />
           </div>
         </div>
+        <div className="error-message">
+          {loginError}
+        </div>
         <div>
           <button type="submit">
             Log in
@@ -46,6 +44,7 @@ let LoginForm = props => {
 const mapStateToProps = state => {
   const data = state.user;
   return {
+    loginError: data.get('loginError')
   };
 };
 const mapDispatchToProps = dispatch => ({

@@ -4,7 +4,7 @@ import LoginForm from './login-form';
 import { Link } from 'react-router-dom';
 import Action from '../../constants/actions';
 
-const closeModal = () => {
+export const closeModal = () => {
   window.$('#myModal').modal('toggle');
   window.$('.modal-backdrop').hide();
 };

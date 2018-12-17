@@ -42,27 +42,42 @@ function* loadData() {
   });
 }
 
-function* login(x) {
-  console.log(x);
+function* login(action) {
+  const { payload } = action;
   let data;
-  // try {
-  //   const res = yield call(axios, {
-  //     url: API.login,
-  //     method: 'POST',
-  //     cors: true
-  //   });
-  //   data = res.data;
-  // } catch (e) {
-  //   throw new Error('Error while logging in')
-  // }
-
-  data = {
-    email: 'oye@tiene.horas',
-    firstName: 'el hombre',
-    lastName: 'grande'
-  };
+  try {
+    const res = yield call(axios, {
+      url: API.login,
+      method: 'POST',
+      cors: true,
+      data: payload
+    });
+    data = res.data;
+  } catch (e) {
+    throw new Error('Error while logging in')
+  }
   yield put({
     type: Action.r_login,
+    payload: data
+  });
+}
+
+function* register(action) {
+  const { payload } = action;
+  let data;
+  try {
+    const res = yield call(axios, {
+      url: API.register,
+      method: 'POST',
+      cors: true,
+      data: payload
+    });
+    data = res.data;
+  } catch (e) {
+    throw new Error('Error while logging in')
+  }
+  yield put({
+    type: Action.r_register,
     payload: data
   });
 }
@@ -75,7 +90,8 @@ function closeModal() {
 export default function*() {
   yield all([
     takeEvery(Action.loadData, loadData),
-    takeEvery(Action.login, login)
+    takeEvery(Action.login, login),
+    takeEvery(Action.register, register)
   ])
 }
  

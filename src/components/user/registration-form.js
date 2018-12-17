@@ -1,13 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import CustomInput from '../custom-input';
+import Action from '../../constants/actions'
 
-const RegistrationForm = props => {
-    const { handleSubmit, pristine, reset, submitting } = props;
+let RegistrationForm = props => {
+    const { handleSubmit, pristine, reset, submitting, onSubmit, registerError, loggedIn } = props;
+    if(loggedIn) {
+        return <Redirect to="/"/>
+    }
     return (
         <div id="registration-border">
             <h1>Registration</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div id="form-group">
                     <label>First Name</label>
                     <div>
@@ -51,6 +57,9 @@ const RegistrationForm = props => {
                         />
                     </div>
                 </div>
+                <div className="error-message">
+                  {registerError}
+                </div>
                 <div>
                     <button type="submit">
                         Submit
@@ -63,6 +72,22 @@ const RegistrationForm = props => {
         </div>
     );
   };
+
+const mapStateToProps = state => {
+  const data = state.user;
+  return {
+    loggedIn: data.get('loggedIn'),
+    registerError: data.get('registerError')
+  };
+};
+const mapDispatchToProps = dispatch => ({
+  onSubmit: payload => dispatch({type: Action.register, payload})
+});
+
+RegistrationForm = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(RegistrationForm);
 
 export default reduxForm({
   form: 'registration'

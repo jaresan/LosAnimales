@@ -23,7 +23,7 @@ export default props => {
           </h6>
         </button1>
       </Link>
-      <Link to="/admin/edit-animal">
+      <Link to="/admin/edit-species">
           <button1>
               <img src="/img/editSpecie.png"/>
               <h6>

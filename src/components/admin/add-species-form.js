@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import { Field, reduxForm } from 'redux-form'
 
 const AddSpeciesForm = props => {
-    const { handleSubmit, pristine, reset, submitting } = props;
+    const { handleSubmit } = props;
     return (
       <form onSubmit={handleSubmit}>
         <div>

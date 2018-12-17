@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
-import CustomInput from '../custom-input';
+import CustomInput from '../form/custom-input';
 import Action from '../../constants/actions'
 
 let RegistrationForm = props => {

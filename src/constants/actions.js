@@ -9,6 +9,8 @@ export default keymirror({
   logout: null,
   register: null,
   r_register: null,
+  addSpecies: null,
+  r_addSpecies: null,
   closeModal: null,
   redirect: null
 });

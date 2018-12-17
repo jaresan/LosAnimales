@@ -7,7 +7,6 @@ export default class extends Component {
             <div>
                 <div id="login-fields">
                     <input
-                        id="formContactName"
                         placeholder={placeholder}
                         className="form-control"
                         type={type}

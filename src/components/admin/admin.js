@@ -1,13 +1,10 @@
 import React from 'react';
 import { Link }from 'react-router-dom';
+import User from '../user/user';
 
 export default props => {
   return (
     <div>
-      <h3>
-          Administrator page
-      </h3>
-      <hr/>
     <div id="admin-page">
     <div className="administrator-page">
       <Link to="/admin/add-species">

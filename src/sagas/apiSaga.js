@@ -82,6 +82,27 @@ function* register(action) {
   });
 }
 
+function* addSpecies(action) {
+  const { payload } = action;
+  let data;
+  try {
+    const res = yield call(axios, {
+      url: API.addSpecies,
+      method: 'POST',
+      cors: true,
+      data: payload
+    });
+    data = res.data;
+    console.log(data);
+  } catch (e) {
+    throw new Error('Error while logging in')
+  }
+  yield put({
+    type: Action.r_addSpecies,
+    payload: data
+  });
+}
+
 function closeModal() {
   window.$('#myModal').modal('toggle');
   window.$('.modal-backdrop').hide();
@@ -91,7 +112,8 @@ export default function*() {
   yield all([
     takeEvery(Action.loadData, loadData),
     takeEvery(Action.login, login),
-    takeEvery(Action.register, register)
+    takeEvery(Action.register, register),
+    takeEvery(Action.addSpecies, addSpecies),
   ])
 }
  

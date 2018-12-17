@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import Action from '../../constants/actions';
-import CustomInput from '../custom-input-login';
+import CustomInput from '../form/custom-input';
 
 let LoginForm = props => {
     const { handleSubmit, pristine, reset, submitting, onSubmit, closeModal, loginError } = props;
@@ -28,7 +28,7 @@ let LoginForm = props => {
           {loginError}
         </div>
         <div style={{margin: '20px 0px 10px 0px'}}>
-            <button type="submit" className="btn btn-primary btn-lg btn-block" style={{height:'40px', "font-size":'14px'}} >
+            <button type="submit" className="btn btn-primary btn-lg btn-block" style={{height:'40px', fontSize:'14px'}} >
                 Log in
             </button>
         </div>

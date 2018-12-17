@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LoginForm from './login-form';
 import { Link } from 'react-router-dom';
+import Action from '../../constants/actions';
+
+const closeModal = () => {
+  window.$('#myModal').modal('toggle');
+  window.$('.modal-backdrop').hide();
+};
 
 const User = props => {
   return (
@@ -21,8 +27,8 @@ const User = props => {
             </div>
 
             <div className="modal-body">
-              <LoginForm/>
-              Don't have an account? <Link to="/registration">Sign up</Link>!
+              <LoginForm closeModal={closeModal}/>
+              Don't have an account? <Link to="/registration" onClick={closeModal}>Sign up</Link>!
             </div>
           </div>
         </div>
@@ -40,7 +46,7 @@ const mapStateToProps = state => {
   };
 };
 const mapDispatchToProps = dispatch => ({
-  neco: payload => dispatch({ type: 'aa', payload })
+  closeModal: () => dispatch({type: Action.closeModal})
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(User);

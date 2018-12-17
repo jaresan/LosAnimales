@@ -4,9 +4,14 @@ import { Field, reduxForm } from 'redux-form';
 import Action from '../../constants/actions';
 
 let LoginForm = props => {
-    const { handleSubmit, pristine, reset, submitting, onSubmit } = props;
+    const { handleSubmit, pristine, reset, submitting, onSubmit, closeModal } = props;
     return (
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={async (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        closeModal();
+        await handleSubmit(onSubmit)();
+      }}>
         <div>
           <label>Email</label>
           <div>

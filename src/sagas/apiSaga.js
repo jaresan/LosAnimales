@@ -67,17 +67,15 @@ function* login(x) {
   });
 }
 
-function* closeModal() {
-  window.$(function () {
-    window.$('#myModal').modal('toggle');
-  });
+function closeModal() {
+  window.$('#myModal').modal('toggle');
+  window.$('.modal-backdrop').hide();
 }
 
 export default function*() {
   yield all([
     takeEvery(Action.loadData, loadData),
-    takeEvery(Action.login, login),
-    takeEvery(Action.r_login, closeModal)
+    takeEvery(Action.login, login)
   ])
 }
  

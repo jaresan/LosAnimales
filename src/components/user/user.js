@@ -16,7 +16,7 @@ const User = props => {
         <img src="/img/account.png" alt="Account"/>
       </button>
       {props.data.email}
-      {props.loggedIn ? <span>Sign out</span> : <span/>}
+      {props.loggedIn ? <button onClick={props.logout}>Sign out</button> : <span/>}
       <div className="modal" id="myModal">
         <div className="modal-dialog">
           <div className="modal-content">
@@ -46,7 +46,8 @@ const mapStateToProps = state => {
   };
 };
 const mapDispatchToProps = dispatch => ({
-  closeModal: () => dispatch({type: Action.closeModal})
+  closeModal: () => dispatch({type: Action.closeModal}),
+  logout: () => dispatch({type: Action.logout})
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(User);

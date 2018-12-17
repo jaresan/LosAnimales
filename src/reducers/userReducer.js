@@ -4,7 +4,7 @@ import { closeModal } from "../components/user/user";
 
 
 const initialState = fromJS({
-  data: {},
+  data: fromJS({}),
   loggedIn: false,
   isAdmin: false,
   loginError: null,
@@ -16,6 +16,12 @@ export default function(state = initialState, { type, payload }) {
   payload = payload || {};
   const { success, msg } = payload;
   switch (type) {
+    case Action.logout:
+      state = state.set('data', fromJS({}));
+      state = state.set('isAdmin', false);
+      state = state.set('loginError', null);
+      state = state.set('registerError', null);
+      return state.set('loggedIn', false);
     case Action.r_login:
       if (success) {
         closeModal();

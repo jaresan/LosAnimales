@@ -6,6 +6,7 @@ export default keymirror({
   r_loadData: null,
   login: null,
   r_login: null,
+  logout: null,
   register: null,
   r_register: null,
   closeModal: null,

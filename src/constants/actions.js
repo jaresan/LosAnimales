@@ -4,6 +4,6 @@ export default keymirror({
   saveAnimals: null,
   loadData: null,
   r_loadData: null,
-  loadAnimals: null,
-  r_loadAnimals: null
+  login: null,
+  r_login: null
 });

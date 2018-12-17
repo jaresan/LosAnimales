@@ -7,10 +7,21 @@ class Login extends Component {
     return (
       <div>
         <LoginForm
-          onSubmit={console.log}
+          onSubmit={this.props.neco}
         />
       </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  const data = state.user;
+  return {
+    species: data.get('species').toJS()
+  };
+};
+const mapDispatchToProps = dispatch => ({
+  neco: payload => dispatch({type: 'aa', payload})
+});
+
 export default connect()(Login);

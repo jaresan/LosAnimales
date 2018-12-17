@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form'
+import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
+import Action from '../../constants/actions';
 
-const LoginForm = props => {
-    const { handleSubmit, pristine, reset, submitting } = props;
+let LoginForm = props => {
+    const { handleSubmit, pristine, reset, submitting, onSubmit } = props;
     return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label>Email</label>
           <div>
@@ -35,6 +37,21 @@ const LoginForm = props => {
       </form>
     );
   };
+
+const mapStateToProps = state => {
+  const data = state.user;
+  return {
+  };
+};
+const mapDispatchToProps = dispatch => ({
+  onSubmit: payload => dispatch({type: Action.login, payload})
+});
+
+LoginForm = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginForm);
+
 
 export default reduxForm({
   form: 'login'

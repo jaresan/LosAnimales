@@ -391,3 +391,22 @@ button1 h6{
     font-size: 18px;
     color: white;
 }
+
+#accountButton {
+    border: none;
+    background: none;
+}
+
+#accountButton:focus {
+    outline: none;
+}
+
+#accountButton img {
+    width: 25px;
+    height: 25px;
+    border: none;
+}
+
+#accountButton img:focus {
+    outline: none;
+}

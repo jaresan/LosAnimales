@@ -42,10 +42,42 @@ function* loadData() {
   });
 }
 
+function* login(x) {
+  console.log(x);
+  let data;
+  // try {
+  //   const res = yield call(axios, {
+  //     url: API.login,
+  //     method: 'POST',
+  //     cors: true
+  //   });
+  //   data = res.data;
+  // } catch (e) {
+  //   throw new Error('Error while logging in')
+  // }
+
+  data = {
+    email: 'oye@tiene.horas',
+    firstName: 'el hombre',
+    lastName: 'grande'
+  };
+  yield put({
+    type: Action.r_login,
+    payload: data
+  });
+}
+
+function* closeModal() {
+  window.$(function () {
+    window.$('#myModal').modal('toggle');
+  });
+}
 
 export default function*() {
   yield all([
-    takeEvery(Action.loadData, loadData)
+    takeEvery(Action.loadData, loadData),
+    takeEvery(Action.login, login),
+    takeEvery(Action.r_login, closeModal)
   ])
 }
  

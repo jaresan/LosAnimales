@@ -1,55 +1,51 @@
 import axios from 'axios';
 import { put, takeEvery, all, call } from 'redux-saga/effects';
 import Action from '../constants/actions';
+import { API } from '../constants/config';
+import _ from 'lodash';
 
 function* loadData() {
-  //TODO: TONY
-  // const data = yield call(axios.get, 'apiUrl');
-  const data = {
-    data: [
-      'panda',
-      'tiger',
-      'lion',
-      'parrot',
-      'zebra',
-      'tarantula',
-      'giraffe',
-      'gorilla',
-      'redPanda',
-      'crocodile',
-      'ape',
-      'elephant'
-    ]
-  };
+  let data;
+  try {
+    const res = yield call(axios, {
+      url: API.getAll,
+      method: 'GET',
+      cors: true
+    });
+    data = res.data;
+  } catch (e) {
+    throw new Error('Error while fetching data.')
+  }
+
   yield put({
     type: Action.r_loadData,
-    payload: data.data
+    payload: data
+  });
+
+  // Preload images to the browser
+  const pictures = _.flatten([data.species, data.animals]).reduce((acc, e) => {
+    if (e.thumbnailImg) {
+      acc.push(e.thumbnailImg);
+    }
+    if (e.img) {
+      acc.push(e.img);
+    }
+    if (e.detailImg) {
+      acc.push(e.detailImg);
+    }
+    return acc;
+  }, []);
+
+  pictures.forEach((picture) => {
+    const img = new Image();
+    img.src = picture;
   });
 }
 
-function* loadAnimals(action) {
-  const species = action.payload.species;
-  //TODO: TONY
-  // const data = yield call(axios.get, 'apiUrl');
-  const data = {
-    data: [
-      'first one',
-      'the second one',
-      'another animal',
-      'the very last animal',
-      'haha, another animal'
-    ]
-  };
-  yield put({
-    type: Action.r_loadAnimals,
-    payload: {data: data.data, species}
-  });
-}
 
 export default function*() {
   yield all([
-    takeEvery(Action.loadData, loadData),
-    takeEvery(Action.loadAnimals, loadAnimals)
+    takeEvery(Action.loadData, loadData)
   ])
 }
  

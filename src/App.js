@@ -5,19 +5,16 @@ import './styles/style.css';
 import { BrowserRouter, Route } from 'react-router-dom'
 import Home from './components/home'
 import AnimalDetail from './components/animal/animal-detail'
-import animalInfo from './components/animal/facts';
 import Registration from "./components/user/registration";
 import Admin from "./components/admin/admin";
 import AddSpecies from "./components/admin/add-species";
 
 const getAnimalDetail = props => {
-  const animalId = props.match.params.animal_id;
+  const species = props.match.params.species;
   return (
     <AnimalDetail
       {...props}
-      animalId ={animalId}
-      data={animalInfo[animalId] || animalInfo['panda']}
-      imgPath={`/img/animals/detail/${animalId}.png`}
+      species={species}
     />
   )
 };
@@ -33,7 +30,7 @@ class App extends Component {
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/admin/add-species" component={AddSpecies} />
             <Route
-              path="/animal/:animal_id"
+              path="/animal/:species"
               render={getAnimalDetail}
             />
           </div>

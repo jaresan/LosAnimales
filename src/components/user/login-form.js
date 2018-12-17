@@ -2,40 +2,35 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import Action from '../../constants/actions';
+import CustomInput from '../custom-input-login';
 
 let LoginForm = props => {
     const { handleSubmit, pristine, reset, submitting, onSubmit, closeModal, loginError } = props;
     return (
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <label>Email</label>
           <div>
             <Field
               name="email"
-              component="input"
+              component={CustomInput}
               type="email"
               placeholder="Email"
             />
           </div>
-        </div>
-        <div>
-          <label>Password</label>
-          <div>
+        <div style={{margin: '20px 0px 0px 0px'}}>
             <Field
               name="password"
-              component="input"
+              component={CustomInput}
               type="password"
               placeholder="Password"
             />
           </div>
-        </div>
         <div className="error-message">
           {loginError}
         </div>
-        <div>
-          <button type="submit">
-            Log in
-          </button>
+        <div style={{margin: '20px 0px 10px 0px'}}>
+            <button type="submit" className="btn btn-primary btn-lg btn-block" style={{height:'40px', "font-size":'14px'}} >
+                Log in
+            </button>
         </div>
       </form>
     );

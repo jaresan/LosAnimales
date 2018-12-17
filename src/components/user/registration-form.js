@@ -11,15 +11,18 @@ let RegistrationForm = props => {
         return <Redirect to="/"/>
     }
     return (
+        <div id="reg-page">
+        <div className="registration-page">
         <div id="registration-border">
             <h1>Registration</h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} style={{margin:'10%'}}>
                 <div id="form-group">
                     <label>First Name</label>
                     <div>
                         <Field
                           name="firstName"
                           placeholder="First Name"
+                          type="text"
                           component={ CustomInput }
                         />
                     </div>
@@ -29,7 +32,7 @@ let RegistrationForm = props => {
                     <div>
                         <Field
                             name="lastName"
-                            component="input"
+                            component={ CustomInput }
                             type="text"
                             placeholder="Last Name"
                         />
@@ -40,7 +43,7 @@ let RegistrationForm = props => {
                     <div>
                         <Field
                             name="email"
-                            component="input"
+                            component={ CustomInput }
                             type="email"
                             placeholder="Email"
                         />
@@ -51,7 +54,7 @@ let RegistrationForm = props => {
                     <div>
                         <Field
                             name="password"
-                            component="input"
+                            component={ CustomInput }
                             type="password"
                             placeholder="Password"
                         />
@@ -69,6 +72,8 @@ let RegistrationForm = props => {
                     </button>
                 </div>
             </form>
+        </div>
+        </div>
         </div>
     );
   };

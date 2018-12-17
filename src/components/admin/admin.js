@@ -9,7 +9,7 @@ export default props => {
       </h3>
       <hr/>
     <div id="admin-page">
-    <div className="porque">
+    <div className="administrator-page">
       <Link to="/admin/add-species">
         <button1>
           <img src="/img/addSpecie.png"/>

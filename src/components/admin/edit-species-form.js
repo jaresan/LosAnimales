@@ -3,6 +3,7 @@ import { connect }  from 'react-redux';
 import Action from '../../constants/actions';
 import { reduxForm, Field } from 'redux-form';
 import CustomTextarea from '../form/custom-textarea';
+import CustomInput from '../form/custom-input';
 import FileUploadForm from './file-upload-form';
 import { required } from '../form/validations';
 
@@ -49,6 +50,15 @@ class AddSpeciesForm extends FileUploadForm {
             </div>
             { (this.props.form && this.props.form.values && this.props.form.values.name) ?
               <span>
+                <div className="form-group">
+                  <label>Location</label>
+                  <Field
+                    name="location"
+                    type="text"
+                    validate={[required]}
+                    component={ CustomInput }
+                  />
+                </div>
                 <div className="form-group">
                   <label>Classification</label>
                   <Field

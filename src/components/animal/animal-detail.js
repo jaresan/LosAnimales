@@ -67,9 +67,10 @@ class AnimalDetail extends Component {
             <h1>Places</h1>
 
             <div className="img-container">
-              <img src="/img/maps/india.JPG" alt="India"/>
+              <div id="map"></div>
+              <img src={'https://maps.googleapis.com/maps/api/staticmap?center='+data.info.location+'&zoom=6&scale=2&size=960x330&maptype=hybrid&key=AIzaSyBdVaYLflZ4kJ24m0KlONuY2txMzMMhw7o'}/>
               <div className="content">
-                <h3>Panda location</h3>
+                <h3>{_.capitalize(species)} location</h3>
                 <p>This is where they live.</p>
               </div>
             </div>

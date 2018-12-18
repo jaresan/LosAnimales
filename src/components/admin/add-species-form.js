@@ -14,87 +14,95 @@ class AddSpeciesForm extends FileUploadForm {
     const { handleSubmit, onSubmit, addSpeciesError } = this.props;
     return (
       <div className="add-species-page">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div>
             <div className="form-group">
-          <label>Name of the species</label>
-          <Field
-            name="name"
-            type="text"
-            validate={[required]}
-            component={ CustomInput }
-          />
+              <label>Name of the species</label>
+              <Field
+                name="name"
+                type="text"
+                validate={[required]}
+                component={ CustomInput }
+              />
             </div>
             <div className="form-group">
-          <label>Classification</label>
-          <Field
-            name="classification"
-            validate={[required]}
-            component={ CustomTextarea }
-          />
+              <label>Location</label>
+              <Field
+                name="location"
+                type="text"
+                validate={[required]}
+                component={ CustomInput }
+              />
             </div>
             <div className="form-group">
-          <label>Description</label>
-          <Field
-            name="description"
-            validate={[required]}
-            component={ CustomTextarea }
-          />
+              <label>Classification</label>
+              <Field
+                name="classification"
+                validate={[required]}
+                component={ CustomTextarea }
+              />
             </div>
             <div className="form-group">
-          <label>Diet</label>
-          <Field
-            name="diet"
-            validate={[required]}
-            component={ CustomTextarea }
-          />
+              <label>Description</label>
+              <Field
+                name="description"
+                validate={[required]}
+                component={ CustomTextarea }
+              />
             </div>
             <div className="form-group">
-          <label>Appearance</label>
-          <Field
-            name="appearance"
-            validate={[required]}
-            component={ CustomTextarea }
-          />
+              <label>Diet</label>
+              <Field
+                name="diet"
+                validate={[required]}
+                component={ CustomTextarea }
+              />
             </div>
             <div className="form-group">
-          <label>Behavior</label>
-          <Field
-            name="behaviour"
-            validate={[required]}
-            component={ CustomTextarea }
-          />
+              <label>Appearance</label>
+              <Field
+                name="appearance"
+                validate={[required]}
+                component={ CustomTextarea }
+              />
             </div>
             <div className="form-group">
-          <label style={{"marginRight":'20px'}}>Thumbnail</label>
-          <input type="file" onChange={this.onFileChanged('thumbnail')}/>
-          <Field
-              name="thumbnail"
-              component={FileInput}
-              type="hidden"
-          />
+              <label>Behavior</label>
+              <Field
+                name="behaviour"
+                validate={[required]}
+                component={ CustomTextarea }
+              />
             </div>
             <div className="form-group">
-                <label style={{"marginRight":'20px'}}>Detail</label>
-                <input type="file" onChange={this.onFileChanged('detail')}/>
-          <Field
-              name="detail"
-              component={FileInput}
-              type="hidden"
-          />
+              <label style={{ "marginRight": '20px' }}>Thumbnail</label>
+              <input type="file" onChange={this.onFileChanged('thumbnail')}/>
+              <Field
+                name="thumbnail"
+                component={FileInput}
+                type="hidden"
+              />
             </div>
             <div className="form-group">
-            <button type="submit" className="button">
+              <label style={{ "marginRight": '20px' }}>Detail</label>
+              <input type="file" onChange={this.onFileChanged('detail')}/>
+              <Field
+                name="detail"
+                component={FileInput}
+                type="hidden"
+              />
+            </div>
+            <div className="form-group">
+              <button type="submit" className="button">
                 Submit
-            </button>
+              </button>
             </div>
-        </div>
-      </form>
+          </div>
+        </form>
       </div>
     );
   }
 }
-
 
 
 const mapStateToProps = state => {
@@ -104,7 +112,7 @@ const mapStateToProps = state => {
   };
 };
 const mapDispatchToProps = dispatch => ({
-  onSubmit: payload => dispatch({type: Action.addSpecies, payload})
+  onSubmit: payload => dispatch({ type: Action.addSpecies, payload })
 });
 
 AddSpeciesForm = connect(

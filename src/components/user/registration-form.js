@@ -17,7 +17,7 @@ let RegistrationForm = props => {
         <div id="registration-border">
           <h1>Registration</h1>
           <form onSubmit={handleSubmit(onSubmit)} style={{ margin: '10%' }}>
-            <div class="form-group">
+            <div className="form-group">
               <label>First Name</label>
               <div>
                 <Field
@@ -29,7 +29,7 @@ let RegistrationForm = props => {
                 />
               </div>
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label>Last Name</label>
               <div>
                 <Field
@@ -41,7 +41,7 @@ let RegistrationForm = props => {
                 />
               </div>
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label>Email</label>
               <div>
                 <Field
@@ -53,7 +53,7 @@ let RegistrationForm = props => {
                 />
               </div>
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label>Password</label>
               <div>
                 <Field
@@ -65,7 +65,7 @@ let RegistrationForm = props => {
                 />
               </div>
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label>Repeat password</label>
               <div>
                 <Field

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export  default class extends Component {
   render(){
-    const { input, placeholder, type} = this.props;
+    const { input, placeholder, type, meta: { touched, error, warning }} = this.props;
     return (
         <div>
         <div id="form-fields">

@@ -23,7 +23,8 @@ class AddSpeciesForm extends FileUploadForm {
       'diet',
       'appearance',
       'behaviour',
-      'description'
+      'description',
+      'location'
     ];
 
     const { info } = data;

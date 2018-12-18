@@ -1,5 +1,6 @@
 import React, { Component }  from 'react';
 import { connect }  from 'react-redux';
+import { Redirect }  from 'react-router-dom';
 import Action from '../../constants/actions';
 import { reduxForm, Field } from 'redux-form';
 import CustomTextarea from '../form/custom-textarea';
@@ -34,7 +35,11 @@ class AddSpeciesForm extends FileUploadForm {
 
 
   render() {
-    const { handleSubmit, onSubmit, addSpeciesError } = this.props;
+    const { handleSubmit, onSubmit, addSpeciesError, form } = this.props;
+    if(form && form.submitSucceeded) {
+      return <Redirect to="/admin"/>
+    }
+
     return (
       <div className="edit-species-page">
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -114,7 +119,7 @@ class AddSpeciesForm extends FileUploadForm {
               <div/>
             }
             <div className="form-group">
-              <button type="submit" className="button">
+              <button type="submit" className="button" disabled={form && form.syncErrors}>
                 Submit
               </button>
             </div>
@@ -128,10 +133,9 @@ class AddSpeciesForm extends FileUploadForm {
 
 const mapStateToProps = state => {
   const data = state.data;
-  const form = state.form;
   return {
     species: data.get('species').toJS(),
-    form: form.editSpecies
+    form: state.form.editSpecies
   };
 };
 const mapDispatchToProps = dispatch => ({

@@ -1,15 +1,19 @@
 import React, { Component }  from 'react';
 import { connect }  from 'react-redux';
+import { Redirect }  from 'react-router-dom';
 import Action from '../../constants/actions';
 import { reduxForm, Field } from 'redux-form';
 import CustomInput from '../form/custom-input';
 import FileUploadForm from './file-upload-form';
 import { required } from '../form/validations';
 
-class AddSpeciesForm extends FileUploadForm {
+class AddAnimalForm extends FileUploadForm {
 
   render() {
-    const { handleSubmit, onSubmit } = this.props;
+    const { handleSubmit, onSubmit, form } = this.props;
+    if(form && form.submitSucceeded) {
+      return <Redirect to="/admin"/>
+    }
     return (
       <div className="add-animal-page">
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -25,21 +29,21 @@ class AddSpeciesForm extends FileUploadForm {
           />
             </div>
             <div className="form-group">
-          <label style={{"margin-right":'20px'}}>Species</label>
+          <label style={{"marginRight":'20px'}}>Species</label>
           <Field name="species" component="select" validate={[required]}>
             <option />
             {
-              this.props.species.map(name => <option value={name}>{name}</option>)
+              this.props.species.map(name => <option key={name} value={name}>{name}</option>)
             }
           </Field>
             </div>
             <div className="form-group">
-          <Field name="img" component="input" type="hidden"/>
-          <label style={{"margin-right":'20px'}}>Image</label>
+          <Field name="img" component="input" type="hidden" validate={[required]}/>
+          <label style={{"marginRight":'20px'}}>Image</label>
           <input type="file" onChange={this.onFileChanged('img')}/>
             </div>
             <div className="form-group">
-                <button type="submit" className="button">
+                <button type="submit" className="button" disabled={form && form.syncErrors}>
                     Submit
                 </button>
             </div>
@@ -55,18 +59,19 @@ class AddSpeciesForm extends FileUploadForm {
 const mapStateToProps = state => {
   const data = state.data;
   return {
-    species: data.get('species').toJS().map(s => s.name)
+    species: data.get('species').toJS().map(s => s.name),
+    form: state.form.addAnimal
   };
 };
 const mapDispatchToProps = dispatch => ({
   onSubmit: payload => dispatch({type: Action.addAnimal, payload})
 });
 
-AddSpeciesForm = connect(
+AddAnimalForm = connect(
   mapStateToProps,
   mapDispatchToProps
-)(AddSpeciesForm);
+)(AddAnimalForm);
 
 export default reduxForm({
-  form: 'addSpecies'
-})(AddSpeciesForm)
+  form: 'addAnimal'
+})(AddAnimalForm)

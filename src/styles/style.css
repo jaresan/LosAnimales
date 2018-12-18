@@ -515,6 +515,17 @@ button h5{
     margin: 30px;
 }
 
+.button:disabled {
+    background-color: lightgray !important;
+    background-image: linear-gradient(to bottom, #ffffff 0%, #e2e8e3 51%, #ffffff 100%);
+    color: #cec0bf;
+    cursor: not-allowed;
+}
+
+.button:disabled:hover {
+    opacity: 1;
+}
+
 .button.cancel {
     background-color: #ffc5b4;
     background-image: linear-gradient(to bottom, #facdc4 0%, #fa92a1 51%, #facdc4 100%);
@@ -569,6 +580,10 @@ button h5{
 
 a {
     color: #aeebff;
+}
+
+a:hover {
+    color: #cdc1ff;
 }
 
 input.form-control {

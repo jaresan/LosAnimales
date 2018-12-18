@@ -1,8 +1,9 @@
 import React, { Component }  from 'react';
 import { connect }  from 'react-redux';
+import { Redirect }  from 'react-router-dom';
 import Action from '../../constants/actions';
 import { reduxForm, Field } from 'redux-form';
-import CustomInput from '../custom-input-login';
+import CustomInput from '../form/custom-input';
 import CustomTextarea from '../form/custom-textarea';
 import FileUploadForm from './file-upload-form'
 import FileInput from '../form/file-input';
@@ -11,7 +12,10 @@ import { required } from '../form/validations';
 class AddSpeciesForm extends FileUploadForm {
 
   render() {
-    const { handleSubmit, onSubmit, addSpeciesError } = this.props;
+    const { handleSubmit, onSubmit, addSpeciesError, form } = this.props;
+    if(form && form.submitSucceeded) {
+      return <Redirect to="/admin"/>
+    }
     return (
       <div className="add-species-page">
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -81,6 +85,7 @@ class AddSpeciesForm extends FileUploadForm {
                 name="thumbnail"
                 component={FileInput}
                 type="hidden"
+                validate={[required]}
               />
             </div>
             <div className="form-group">
@@ -90,10 +95,11 @@ class AddSpeciesForm extends FileUploadForm {
                 name="detail"
                 component={FileInput}
                 type="hidden"
+                validate={[required]}
               />
             </div>
             <div className="form-group">
-              <button type="submit" className="button">
+              <button type="submit" className="button" disabled={form && form.syncErrors}>
                 Submit
               </button>
             </div>
@@ -108,7 +114,8 @@ class AddSpeciesForm extends FileUploadForm {
 const mapStateToProps = state => {
   const data = state.user;
   return {
-    addSpeciesError: data.get('addSpeciesError')
+    addSpeciesError: data.get('addSpeciesError'),
+    form: state.form.addSpecies
   };
 };
 const mapDispatchToProps = dispatch => ({

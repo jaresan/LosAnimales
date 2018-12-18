@@ -29,7 +29,7 @@ const User = props => {
 
             <div className="modal-header">
               <h4 className="modal-title">Log in</h4>
-              <button type="button" className="close" data-dismiss="modal">&times;</button>
+              <button type="button" className="cancel close" data-dismiss="modal">&times;</button>
             </div>
 
             <div className="modal-body">

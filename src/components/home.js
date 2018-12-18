@@ -11,7 +11,7 @@ const Home = props => {
       <div className="container">
         <User/>
         <div>
-          <img src="/img/logotipo.png" alt="Logo"/>
+          <img id="logo" src="/img/logotipo.png" alt="Logo"/>
         </div>
         <h3>Welcome to Animal Adoptions</h3>
           <hr/>

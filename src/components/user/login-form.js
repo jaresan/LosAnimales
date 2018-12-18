@@ -9,6 +9,7 @@ let LoginForm = props => {
     return (
       <form onSubmit={handleSubmit(onSubmit)}>
           <div>
+            <label>E-mail</label>
             <Field
               name="email"
               component={CustomInput}
@@ -17,6 +18,7 @@ let LoginForm = props => {
             />
           </div>
         <div style={{margin: '20px 0px 0px 0px'}}>
+            <label>Password</label>
             <Field
               name="password"
               component={CustomInput}
@@ -27,8 +29,8 @@ let LoginForm = props => {
         <div className="error-message">
           {loginError}
         </div>
-        <div style={{margin: '20px 0px 10px 0px'}}>
-            <button type="submit" className="btn btn-primary btn-lg btn-block" style={{height:'40px', fontSize:'14px', background:"green"}} >
+        <div>
+            <button type="submit" className="button" >
                 Log in
             </button>
         </div>

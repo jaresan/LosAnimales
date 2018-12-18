@@ -7,7 +7,7 @@ export default props => {
     <div>
       <div id="admin-header">
         <Link to="/" className="navbar-brand js-scroll-trigger" href="#page-top ">
-          <img alt='logo' src="/img/home_logo.png" style={{width:'60px'}}/>
+          <img alt='logo' src="/img/home_logo.png" id="home-button" style={{width:'60px'}}/>
         </Link>
         <User/>
       </div>

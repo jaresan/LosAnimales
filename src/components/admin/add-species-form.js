@@ -6,6 +6,7 @@ import CustomInput from '../custom-input-login';
 import CustomTextarea from '../form/custom-textarea';
 import FileUploadForm from './file-upload-form'
 import FileInput from '../form/file-input';
+import { required } from '../form/validations';
 
 class AddSpeciesForm extends FileUploadForm {
 
@@ -20,6 +21,7 @@ class AddSpeciesForm extends FileUploadForm {
           <Field
             name="name"
             type="text"
+            validate={[required]}
             component={ CustomInput }
           />
             </div>
@@ -27,6 +29,7 @@ class AddSpeciesForm extends FileUploadForm {
           <label>Classification</label>
           <Field
             name="classification"
+            validate={[required]}
             component={ CustomTextarea }
           />
             </div>
@@ -34,6 +37,7 @@ class AddSpeciesForm extends FileUploadForm {
           <label>Description</label>
           <Field
             name="description"
+            validate={[required]}
             component={ CustomTextarea }
           />
             </div>
@@ -41,6 +45,7 @@ class AddSpeciesForm extends FileUploadForm {
           <label>Diet</label>
           <Field
             name="diet"
+            validate={[required]}
             component={ CustomTextarea }
           />
             </div>
@@ -48,6 +53,7 @@ class AddSpeciesForm extends FileUploadForm {
           <label>Appearance</label>
           <Field
             name="appearance"
+            validate={[required]}
             component={ CustomTextarea }
           />
             </div>
@@ -55,11 +61,12 @@ class AddSpeciesForm extends FileUploadForm {
           <label>Behavior</label>
           <Field
             name="behaviour"
+            validate={[required]}
             component={ CustomTextarea }
           />
             </div>
             <div className="form-group">
-          <label style={{"margin-right":'20px'}}>Thumbnail</label>
+          <label style={{"marginRight":'20px'}}>Thumbnail</label>
           <input type="file" onChange={this.onFileChanged('thumbnail')}/>
           <Field
               name="thumbnail"
@@ -68,7 +75,7 @@ class AddSpeciesForm extends FileUploadForm {
           />
             </div>
             <div className="form-group">
-                <label style={{"margin-right":'20px'}}>Detail</label>
+                <label style={{"marginRight":'20px'}}>Detail</label>
                 <input type="file" onChange={this.onFileChanged('detail')}/>
           <Field
               name="detail"

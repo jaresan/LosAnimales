@@ -13,7 +13,7 @@ export  default class extends Component {
           {...input}
         />
         </div>
-        <div className="error-message">
+          <div className="error-message">
                 {touched &&
                 ((error && <span>{error}</span>) ||
                     (warning && <span>{warning}</span>))}

@@ -16,7 +16,7 @@ export default props => {
     <div>
       <div id="backFromAdmin">
         <Link to="/admin">
-          <button className="button cancel">Back</button>
+          <button className="button neutral">Back</button>
         </Link>
       </div>
       {adminForms[props.match.params.adminForm]}

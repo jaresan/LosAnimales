@@ -9,7 +9,7 @@ export class AnimalNavBar extends Component {
 
         <div className="container" >
           <Link to="/" className="navbar-brand js-scroll-trigger" href="#page-top ">
-              <img alt='logo' src="/img/home_logo.png"/>
+              <img alt='logo' src="/img/home_logo.png" id="home-button"/>
           </Link>
           <User/>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

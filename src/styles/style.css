@@ -4,12 +4,19 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    color: white;
 }
 
 .account img{
     margin-left: 20px;
     margin-top: 20px;
     width: 40px;
+    opacity: 0.65;
+    cursor: pointer;
+}
+
+.account img:hover{
+    opacity: 1;
 }
 
 hr {
@@ -393,12 +400,12 @@ button1 h6{
     color: white;
 }
 
-#accountButton {
+.emptyButton {
     border: none;
     background: none;
 }
 
-#accountButton:focus {
+.emptyButton:focus {
     outline: none;
 }
 
@@ -407,9 +414,10 @@ button1 h6{
     height: 25px;
     border: none;
     display: inline;
+    margin: 5px;
 }
 
-#accountButton img:focus {
+#emptyButton img:focus {
     outline: none;
 }
 
@@ -490,6 +498,11 @@ button1 h6{
 
 .form-group {
     margin: 25px;
+}
+
+.account {
+    flex: auto;
+    display: inline-block;
 }
 
 .add-animal-page{

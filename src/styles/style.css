@@ -502,4 +502,5 @@ button1 h6{
 
 .account {
     flex: auto;
+    display: inline-block;
 }

@@ -326,9 +326,8 @@ button h5{
 #registration-border{
     background: rgba(0, 0, 0, 0.35);
     border: white solid 2px;
-    border-radius: 10%;
     width: 500px;
-    height: 600px;
+    border-radius: 25px;
 }
 
 #registration-border h1{
@@ -342,10 +341,6 @@ button h5{
     font-size: 15px;
     color: white;
 }
-
-#form-group {
-     margin-top: 20px;
- }
 
 #registration-border button{
     background-color: transparent;
@@ -479,4 +474,12 @@ button1 h6{
     cursor: pointer;
     width: 250px;
     height: 300px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group {
+    margin: 25px;
 }

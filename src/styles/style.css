@@ -4,7 +4,6 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    color: white;
 }
 
 .account img{
@@ -510,6 +509,16 @@ button1 h6{
     background: rgba(0, 0, 0, 0.35);
     width: 90%;
     height: 320px;
+    border: black solid 1px;
+    color: white;
+    padding: 20px;
+}
+
+.edit-species-page{
+    margin: auto;
+    background: rgba(0, 0, 0, 0.35);
+    width: 90%;
+    height: 900px;
     border: black solid 1px;
     color: white;
     padding: 20px;

@@ -33,51 +33,72 @@ class AddSpeciesForm extends FileUploadForm {
   render() {
     const { handleSubmit, onSubmit, addSpeciesError } = this.props;
     return (
+        <div className="edit-species-page">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label>Select the species</label>
+            <div className="form-group">
+          <label style={{"margin-right":'20px'}}>Select the species</label>
           <Field name="name" component="select" onChange={this.onSelectSpecies}>
             <option/>
             {
               this.props.species.map(({ name }) => <option key={name} value={name}>{name}</option>)
             }
           </Field>
+            </div>
+            <div className="form-group">
           <label>Classification</label>
           <Field
             name="classification"
             component={ CustomTextarea }
           />
+            </div>
+            <div className="form-group">
           <label>Description</label>
           <Field
             name="description"
             component={ CustomTextarea }
           />
+            </div>
+            <div className="form-group">
           <label>Diet</label>
           <Field
             name="diet"
             component={ CustomTextarea }
           />
+            </div>
+            <div className="form-group">
           <label>Appearance</label>
           <Field
             name="appearance"
             component={ CustomTextarea }
           />
+            </div>
+            <div className="form-group">
           <label>Behavior</label>
           <Field
             name="behaviour"
             component={ CustomTextarea }
           />
-          <Field name="thumbnail" component="input" type="hidden"/>
+            </div>
+            <div className="form-group">
+                <label style={{"margin-right":'20px'}}>Thumbnail</label>
+                <input type="file" onChange={this.onFileChanged('thumbnail')}/>
+                <Field name="thumbnail" component="input" type="hidden"/>
+            </div>
+            <div className="form-group">
+            <label style={{"margin-right":'20px'}}>Detail</label>
+            <input type="file" onChange={this.onFileChanged('detail')}/>
           <Field name="detail" component="input" type="hidden"/>
-          <label>Thumbnail</label>
-          <input type="file" onChange={this.onFileChanged('thumbnail')}/>
-          <label>Detail</label>
-          <input type="file" onChange={this.onFileChanged('detail')}/>
+            </div>
+            <div className="form-group">
+            <button type="submit">
+                Submit
+            </button>
+            </div>
         </div>
-        <button type="submit">
-          Submit
-        </button>
+
       </form>
+        </div>
     );
   }
 }

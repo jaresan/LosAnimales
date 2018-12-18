@@ -343,10 +343,6 @@ button h5{
     color: white;
 }
 
-#form-group {
-     margin-top: 20px;
- }
-
 #registration-border button{
     background-color: transparent;
     border: solid 1px white;
@@ -490,4 +486,13 @@ button1 h6{
     border: black solid 1px;
     color: white;
     padding: 20px;
+}
+
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group {
+    margin: 25px;
 }

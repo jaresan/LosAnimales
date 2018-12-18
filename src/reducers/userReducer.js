@@ -1,6 +1,5 @@
 import { fromJS } from 'immutable';
 import Action from '../constants/actions';
-import { closeModal } from "../components/user/user";
 
 
 const initialState = fromJS({
@@ -24,7 +23,6 @@ export default function(state = initialState, { type, payload }) {
       return state.set('loggedIn', false);
     case Action.r_login:
       if (success) {
-        closeModal();
         state = state.set('data', fromJS(payload.data));
         state = state.set('isAdmin', true);
         state = state.set('loginError', null);

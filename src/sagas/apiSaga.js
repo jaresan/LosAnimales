@@ -60,6 +60,9 @@ function* login(action) {
     type: Action.r_login,
     payload: data
   });
+  if (data.success) {
+    closeModal();
+  }
 }
 
 function* register(action) {

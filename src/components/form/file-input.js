@@ -9,13 +9,13 @@ const FileInput = ({
                      ...props
                    }) => {
   return (
-    <input
-      onChange={adaptFileEventToValue(onChange)}
-      onBlur={adaptFileEventToValue(onBlur)}
-      type="file"
-      {...inputProps}
-      {...props}
-    />
+          <input
+              onChange={adaptFileEventToValue(onChange)}
+              onBlur={adaptFileEventToValue(onBlur)}
+              type="file"
+              {...inputProps}
+              {...props}
+          />
   );
 };
 

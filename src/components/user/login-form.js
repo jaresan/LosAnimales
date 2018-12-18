@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import Action from '../../constants/actions';
-import CustomInput from '../form/custom-input';
+import CustomInput from '../custom-input-login';
 
 let LoginForm = props => {
     const { handleSubmit, pristine, reset, submitting, onSubmit, closeModal, loginError } = props;

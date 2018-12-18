@@ -81,11 +81,11 @@ let RegistrationForm = props => {
               </div>
             </div>
             <div>
-              <button type="submit">
+                <button type="submit" className="btn btn-primary btn-lg btn-block" style={{height:'40px', fontSize:'14px', background:"rgb(143, 194, 96)", color:'black', border:'black'}} >
                 Submit
               </button>
               <Link to="/">
-                <button style={{ marginLeft: "10px" }} type="button">
+                  <button type="submit" className="btn btn-primary btn-lg btn-block" style={{height:'40px', fontSize:'14px', background:"rgb(143, 194, 96)", marginLeft:'10px', color:'black', border:'black'}} >
                   Back
                 </button>
               </Link>

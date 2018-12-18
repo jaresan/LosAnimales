@@ -328,7 +328,7 @@ button h5{
     border: white solid 2px;
     border-radius: 10%;
     width: 500px;
-    height: 600px;
+    height: 800px;
 }
 
 #registration-border h1{
@@ -438,8 +438,8 @@ button1 h6{
 
 #form-fields input {
     margin-right: 50px;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+    color: black;
+    background: white;
 }
 
 #login-fields input {
@@ -482,15 +482,10 @@ button1 h6{
     margin: auto;
     background: rgba(0, 0, 0, 0.35);
     width: 90%;
-    height: 850px;
+    height: 900px;
     border: black solid 1px;
     color: white;
     padding: 20px;
-}
-
-
-.form-group label {
-    font-weight: bold;
 }
 
 .form-group {

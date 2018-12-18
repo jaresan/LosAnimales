@@ -28,7 +28,7 @@ let LoginForm = props => {
           {loginError}
         </div>
         <div style={{margin: '20px 0px 10px 0px'}}>
-            <button type="submit" className="btn btn-primary btn-lg btn-block" style={{height:'40px', fontSize:'14px'}} >
+            <button type="submit" className="btn btn-primary btn-lg btn-block" style={{height:'40px', fontSize:'14px', background:"green"}} >
                 Log in
             </button>
         </div>

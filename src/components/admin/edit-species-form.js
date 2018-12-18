@@ -91,7 +91,7 @@ class AddSpeciesForm extends FileUploadForm {
           <Field name="detail" component="input" type="hidden"/>
             </div>
             <div className="form-group">
-            <button type="submit">
+            <button type="submit" className="button">
                 Submit
             </button>
             </div>

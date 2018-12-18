@@ -14,9 +14,11 @@ export const adminForms = {
 export default props => {
   return (
     <div>
-      <Link to="/admin">
-        <button>Back</button>
-      </Link>
+      <div id="backFromAdmin">
+        <Link to="/admin">
+          <button className="button cancel">Back</button>
+        </Link>
+      </div>
       {adminForms[props.match.params.adminForm]}
     </div>
   )

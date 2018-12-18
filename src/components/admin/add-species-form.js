@@ -77,7 +77,7 @@ class AddSpeciesForm extends FileUploadForm {
           />
             </div>
             <div className="form-group">
-            <button type="submit">
+            <button type="submit" className="button">
                 Submit
             </button>
             </div>

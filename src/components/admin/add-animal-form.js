@@ -37,7 +37,7 @@ class AddSpeciesForm extends FileUploadForm {
           <input type="file" onChange={this.onFileChanged('img')}/>
             </div>
             <div className="form-group">
-                <button type="submit">
+                <button type="submit" className="button">
                     Submit
                 </button>
             </div>

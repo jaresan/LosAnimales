@@ -453,7 +453,6 @@ button1 h6{
     margin: auto;
     background: rgba(0, 0, 0, 0.35);
     width: 90%;
-    height: 900px;
     border: black solid 1px;
     color: white;
     padding: 20px;
@@ -474,7 +473,6 @@ button1 h6{
     margin: auto;
     background: rgba(0, 0, 0, 0.35);
     width: 90%;
-    height: 320px;
     border: black solid 1px;
     color: white;
     padding: 20px;
@@ -484,7 +482,6 @@ button1 h6{
     margin: auto;
     background: rgba(0, 0, 0, 0.35);
     width: 90%;
-    height: 900px;
     border: black solid 1px;
     color: white;
     padding: 20px;
@@ -536,4 +533,9 @@ button1 h6{
     width: 32px;
     height: 32px;
     margin: 1px;
+}
+
+#backFromAdmin {
+    display: inline;
+    padding-left: 5%;
 }

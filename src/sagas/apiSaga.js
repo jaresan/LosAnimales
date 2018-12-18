@@ -103,6 +103,7 @@ function* addSpecies(action) {
     type: Action.r_addSpecies,
     payload: data
   });
+  yield loadData();
 }
 
 function* addAnimal(action) {

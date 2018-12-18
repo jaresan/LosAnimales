@@ -491,3 +491,13 @@ button1 h6{
 .form-group {
     margin: 25px;
 }
+
+.add-animal-page{
+    margin: auto;
+    background: rgba(0, 0, 0, 0.35);
+    width: 90%;
+    height: 320px;
+    border: black solid 1px;
+    color: white;
+    padding: 20px;
+}

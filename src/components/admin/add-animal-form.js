@@ -10,30 +10,40 @@ class AddSpeciesForm extends FileUploadForm {
   render() {
     const { handleSubmit, onSubmit } = this.props;
     return (
+      <div className="add-animal-page">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label>Name of the species</label>
+            <div className="form-group">
+          <label>Name of the animal</label>
           <Field
             name="name"
             type="text"
             placeholder="Animal name"
             component={ CustomInput }
           />
-          <label>Species</label>
+            </div>
+            <div className="form-group">
+          <label style={{"margin-right":'20px'}}>Species</label>
           <Field name="species" component="select">
-            <option/>
+            <option />
             {
               this.props.species.map(name => <option value={name}>{name}</option>)
             }
           </Field>
+            </div>
+            <div className="form-group">
           <Field name="img" component="input" type="hidden"/>
-          <label>Image</label>
+          <label style={{"margin-right":'20px'}}>Image</label>
           <input type="file" onChange={this.onFileChanged('img')}/>
+            </div>
+            <div className="form-group">
+                <button type="submit">
+                    Submit
+                </button>
+            </div>
         </div>
-        <button type="submit">
-          Submit
-        </button>
       </form>
+      </div>
     );
   }
 }

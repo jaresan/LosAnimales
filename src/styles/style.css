@@ -303,14 +303,14 @@ p{
     height: 200px;
 }
 
-/*button img{*/
-    /*height: 150px;*/
-    /*margin-bottom: 10px;*/
-    /*border-radius: 20%;*/
-    /*border-style: solid;*/
-    /*border-color: rgb(213, 213, 213);*/
-    /*border-width: 2px;*/
-/*}*/
+.animal-button img{
+    height: 150px;
+    margin-bottom: 10px;
+    border-radius: 20%;
+    border-style: solid;
+    border-color: rgb(213, 213, 213);
+    border-width: 2px;
+}
 
 button h5{
     font-size: 15px;

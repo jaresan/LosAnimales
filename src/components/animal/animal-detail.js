@@ -85,7 +85,7 @@ class AnimalDetail extends Component {
               <h1>Adopt!</h1>
               {
                 animals.map(animal => (
-                  <button key={animal.name}>
+                  <button key={animal.name} className="animal-button">
                     <img src={animal.img} alt={animal.name}/>
                     <h5>{animal.name}</h5>
                   </button>

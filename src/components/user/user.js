@@ -15,13 +15,14 @@ const User = props => {
       {props.loggedIn ?
         <img src="/img/account.png" alt="Account"/>
         :
-        <button id="accountButton" type="button" data-toggle="modal" data-target="#myModal">
+        <button className="emptyButton" type="button" data-toggle="modal" data-target="#myModal">
           <img src="/img/account.png" alt="Account"/>
         </button>
       }
-      {props.loggedIn ? <img alt='Messages' src="/img/message.png"/> : <span/>}
+      {props.loggedIn ? <img alt='Messages' title="Messaging" src="/img/message.png"/> : <span/>}
+      {props.data.isAdmin ? (<Link to="/admin"><img alt='Messages' title="Admin section" src="/img/admin.png"/></Link>) : <span/>}
       {props.data.email}
-      {props.loggedIn ? <button onClick={props.logout}>Sign out</button> : <span/>}
+      {props.loggedIn ? <button className="emptyButton" onClick={props.logout}><img alt='Sign out' title="Sign out" src="/img/signout.png"/></button> : <span/>}
       <div className="modal" id="myModal">
         <div className="modal-dialog">
           <div className="modal-content">
